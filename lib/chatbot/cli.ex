@@ -1,18 +1,20 @@
 defmodule Chatbot.Cli do
-  # these are just things you can do (might be broken in mine)
-  # import String, only: [trim: 1, downcase: 1]
-  # alias Chatbot.Ai, as: MyAi
   def run do
     loop()
   end
 
   defp loop do
-    IO.gets("> ")
-    |> String.trim
-    |> String.downcase
-    |> Chatbot.Ai.interpret()
-    |> IO.puts()
-
+    # to catch if crashes use try
+    try do
+      IO.gets("> ")
+      |> String.trim
+      |> String.downcase
+      |> Chatbot.Ai.interpret()
+      |> IO.puts()
+    catch
+      :exit, _value -> :rescued
+    end
     loop()
   end
 end
+

@@ -11,7 +11,7 @@ defmodule Chatbot do
       # Starts a worker by calling: Chatbot.Worker.start_link(arg1, arg2, arg3)
       # worker(Chatbot.Worker, [arg1, arg2, arg3]),
 
-      worker(Chatbot.Ai, [:ignore])
+      worker(Chatbot.Ai, [:ignore]),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
