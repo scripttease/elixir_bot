@@ -5,11 +5,11 @@ defmodule Chatbot.Cli do
   end
 
   defp loop do
-    # read line of text from user
-    text = IO.gets("> ")
-    # pass it to chatbot artificial intelligence modeule
-    out = Chatbot.Ai.interpret(text)
-    IO.puts out
+    IO.puts(
+      Chatbot.Ai.interpret(
+        IO.gets("> ")
+      )
+    )
      loop()
   end
 end
