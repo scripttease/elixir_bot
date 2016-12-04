@@ -5,11 +5,15 @@ defmodule Chatbot.Cli do
   end
 
   defp loop do
-    IO.puts(
-      Chatbot.Ai.interpret(
-        IO.gets("> ")
-      )
-    )
+    # IO.puts(
+    #   Chatbot.Ai.interpret(
+    #     IO.gets("> ")
+    #   )
+    # )
+  IO.gets("> ")
+  |> Chatbot.Ai.interpret()
+  |> IO.puts()
+
      loop()
   end
 end
