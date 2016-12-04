@@ -1,11 +1,32 @@
 #nb couuld be rewritten just using cases
 defmodule Chatbot.Ai do
 
+  # alist of tuples
+  @responses [
+    "Hodor!",
+    "...hodor?",
+    "Hodor, hodor, hodor",
+    "Hodor"
+  ]
+
+
+
+  # @matches [
+  #   {~r/hi|hello|hola/i, "hello there"},
+  #   {~r/how do you do/i, "Great, and you?"}
+
+  # ]
+
   def interpret(text) do
-    cond do
-      String.match?(text, ~r/hi|hello|hola/i) -> "hello there"
-      String.match?(text, ~r/how do you do/i) -> "Great, and you?"
-    end
+
+    Enum.random(@responses)
+
+
+    # cond do
+    #   String.match?(text, ~r/hi|hello|hola/i) -> "hello there"
+    #   String.match?(text, ~r/how do you do/i) -> "Great, and you?"
+    #   true -> "I don't understand that"
+    # end
   end
 
   # def interpret(text) do
