@@ -18,8 +18,9 @@ defmodule Chatbot.Ai do
   # ]
 
   def interpret(text) do
-
-    Enum.random(@responses)
+    [response | _rest] = @responses
+    response
+    # Enum.random(@responses)
 
 
     # cond do
