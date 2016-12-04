@@ -1,5 +1,6 @@
 #nb couuld be rewritten just using cases
 defmodule Chatbot.Ai do
+  use GenServer
 
   # alist of tuples
   @responses [
@@ -17,7 +18,13 @@ defmodule Chatbot.Ai do
 
   # ]
 
-  def interpret(text) do
+  # Publice API
+  def start_link(state) do
+    GenServer.start_link(__MODULE__, state) do
+
+    end
+  end
+  def interpret(_) do
     [response | _rest] = @responses
     response
     # Enum.random(@responses)
