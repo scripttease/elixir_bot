@@ -7,6 +7,8 @@ defmodule Chatbot.Cli do
   defp loop do
 
   IO.gets("> ")
+  |> String.trim
+  |> String.downcase
   |> Chatbot.Ai.interpret()
   |> IO.puts()
 
